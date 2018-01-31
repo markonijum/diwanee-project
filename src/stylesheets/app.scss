@@ -1,0 +1,683 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+ @import "susy";
+ @import "compass";
+ @import "./custom_mixins/mixins";
+ @import "./vendor/normalize";
+ @import "./vendor/animate";
+ @import "font-awesome";
+ @import "./vendor/responsiveNav";
+ 
+ 
+ /* ==========================================================================
+    Custom Styles
+    ========================================================================== */
+ 
+ 
+ /* line 25, ../sass/style.scss */
+ 
+ @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+ $susy: ( columns: 12,
+ gutters: 1/4,
+ math: fluid,
+ output: float,
+ gutter-position: outside,
+ );
+ 
+ html {
+     box-sizing: border-box;
+ }
+ 
+ *,
+ *:before,
+ *:after {
+     box-sizing: inherit;
+ }
+ 
+ hr {
+     display: none;
+ }
+ 
+ body {
+     font-family: 'Roboto', 'sans-serif';
+     font-weight: 300;
+     color: #222222;
+ }
+ 
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+     font-weight: 500;
+ }
+ 
+ a {
+     text-decoration: none;
+     color: #222222;
+     &:hover {
+         text-decoration: underline;
+     }
+ }
+ .wow {
+     visibility: hidden;
+ }
+ header {
+     position: fixed;
+    //  background-color:blue;
+     width: 100%;
+     background-color:#f2eee2;
+     z-index: 9999;
+     &.shadow {
+        box-shadow: 1px 0px 20px 0px #aba7a7;
+    }
+     .brand {
+         a {
+             display: block;
+             padding:0 20px;
+         }
+         img {
+             width: 148px;
+         }
+     }
+ 
+     nav {
+         background-color: rgba(38, 38, 38, 0.99);
+         position: relative;
+         z-index: 9999;
+         ul {
+             li {
+                 &:first-child {
+                     a {
+                         padding-top: 127px;
+                         @media only screen and (min-width: 1020px) {
+                             padding-top:10px;
+                         }
+                     }
+                 }
+                 &:last-child {
+                     a {
+                         padding-bottom: 127px;
+                         @media only screen and (min-width: 1020px) {
+                             padding-bottom:10px;
+                         }
+                     }
+                 }
+                 a {
+                     display: block;
+                     padding: 27px;
+                     color: #cccccc;
+                     text-align: center;
+                     text-transform: uppercase;
+                     @media only screen and (min-width: 1020px) {
+                         padding:10px;
+                         color: #222222;
+                     }
+                 }
+                 @media only screen and (min-width: 1020px) {
+                     display: inline-block;
+                 }
+             }
+         }
+         @media only screen and (min-width: 1020px) {
+             background-color: inherit;
+         }
+     }
+     .nav-social {
+         padding: 0 10px 25px 10px;
+         width: 270px;
+         margin: auto;
+         color: #cccccc;
+         span {
+             display: inline-block;
+             margin-right: 50px;
+             text-transform: uppercase;
+             font-size: 1em;
+             font-weight: 400;
+         }
+         i {
+             font-size: 1.5em;
+             margin-right: 22px;
+             color: #cccccc;
+         }
+     }
+     .nav-toggle {
+         i {
+             position: fixed;
+             z-index: 999;
+             right: 20px;
+             top: 25px;
+             font-size: 1.875em;
+         }
+     }
+ }
+ 
+ .jumbotron {
+     background: url("../images/jumbotronbg-mobile.jpg") no-repeat center top;
+     background-size: cover !important;
+     padding-top: 83px;
+     .large-info {
+         display: none;
+         text-align: center;
+         text-align: center;
+         padding-top: 50px;
+         padding-bottom: 25%;
+     }
+     .mobile-info {
+         text-transform: uppercase;
+         font-size: 1.250em;
+         text-align: center;
+         padding-top: 50px;
+         padding-bottom: 120px;
+     }
+     h1 {
+         padding-top: 100px;
+         font-size: 3.750em;
+         text-align: center;
+         text-transform: uppercase;
+     }
+ }
+ 
+ .features {
+     .f-box {
+         padding: 50px 5%;
+         text-align: center;
+         h2 {
+             font-weight: bold;
+             font-size: 1.125em;
+             text-transform: uppercase;
+             margin-top: 28px;
+         }
+         hr {
+             margin-top: 28px;
+             display: block;
+             background-color: #d0d0d0;
+             height: 1px;
+         }
+         p {
+             margin-top: 28px;
+             line-height: 30px;
+         }
+         &:nth-child(2n+1) {
+             background-color: #fbfbfb;
+         }
+         &.higlight {
+             background: #ededed;
+         }
+         img {
+             width: 74px;
+         }
+     }
+ }
+ 
+ section {
+     hr {
+         height: 2px;
+         width: 56px;
+         background: red;
+     }
+ }
+ 
+ h2.section-main-title {
+     font-size: 3.125em;
+     font-weight: normal;
+     text-transform: uppercase;
+     text-align: center;
+ }
+ 
+ h3.sub-head {
+     font-size: 0.875em;
+     text-transform: uppercase;
+     color: #999999;
+     text-align: center;
+     font-weight: 400;
+ }
+ 
+ .job-apply {
+     color: #222222;
+     padding-top: 90px;
+     padding-bottom:90px;
+     h2 {
+         font-weight: 500;
+         font-size: 2.5em;
+         text-transform: uppercase;
+         margin-top: 28px;
+         padding: 0 5%;
+     }
+     hr {
+         margin-top: 28px;
+         display: block;
+         background-color: #c41230;
+         height: 1px;
+     }
+     p {
+         margin-top: 28px;
+         line-height: 30px;
+         &.about-section {
+             padding: 40px 7%;
+             margin-top: 0;
+             word-wrap: break-word;
+             text-align: center;
+         }
+     }
+     &.higlight {
+         background-color: #ededed;
+     }
+     .job-position {
+         display: none;
+         &:nth-child(2n+1) {
+             background-color: #f8f7f5;
+         }
+         padding:30px 5%;
+         .job-title {
+             text-transform: uppercase;
+         }
+         .job-desc {
+             font-size: 0.938em;
+             font-weight: 300;
+             line-height: 20px;
+         }
+         &.higlight {
+             .apply {
+                 color: #ffffff;
+                 border: 1px solid #ffffff;
+             }
+             .left {
+                 ul {
+                     li {
+                         color: #ffffff;
+                     }
+                 }
+             }
+         }
+         .left {
+             ul {
+                 padding-top: 17px;
+                 li {
+                     display: inline-block;
+                     font-size: 0.938em;
+                     font-weight: 300;
+                     line-height: 20px;
+                     padding: 0 3px;
+                     color: #c41230;
+                 }
+             }
+         }
+         .right {
+             display: none;
+         }
+     }
+     .load-more-jobs {
+         display: block;
+         padding: 20px;
+         text-transform: uppercase;
+         font-size: 0.875em;
+         text-align: center;
+         margin:75px auto 0 auto;
+         background-color: #eeeeee;
+         width: 70%;
+         border: none;
+         &:hover {
+             text-decoration: none;
+             border: 1px solid #cccccc;
+         }
+     }
+ }
+ 
+ .about-us {
+     padding-top: 90px;
+     background-color: #fbfbfb;
+     padding-bottom: 47px;
+     h2 {
+         font-weight: 500;
+         font-size: 2.5em;
+         text-transform: uppercase;
+         margin-top: 28px;
+         padding: 0 5%;
+     }
+     hr {
+         margin-top: 28px;
+         margin-bottom: 28px;
+         display: block;
+         background-color: #c41230;
+         height: 1px;
+     }
+     p {
+         margin-top: 28px;
+         line-height: 30px;
+         padding: 0 7%;
+         margin-bottom: 20px;
+         margin-top: 0;
+         word-wrap: break-word;
+         text-align: left;
+     }
+ }
+ 
+ .social {
+     padding: 75px 5%;
+     ul {
+         margin-top: 35px;
+         text-align: center;
+         li {
+             display: inline-block;
+             margin-right: 15px;
+             a {
+                 text-indent: -9999px;
+             }
+         }
+     }
+ }
+ 
+ footer {
+     padding-top:75px;
+     color: #ffffff;
+     .helper {
+         background-color: #222222;
+     }
+     .contact-info {
+         padding: 45px 5% 0 5%;
+         h3 {
+             text-transform: uppercase;
+         }
+         .contact-box {
+             padding-top: 45px;
+             h3 {
+                 background: url('../images/gpsnav.png') no-repeat left center;
+                 padding: 8px 25px;
+                 margin-bottom:15px;
+                 font-size: 1em;
+                 font-weight: 400;
+             }
+             p {
+                 color: #666666;
+                 font-size: 1em;
+                 font-weight: 400;
+                 line-height: 24px;
+             }
+         }
+     }
+     .f-social {
+         padding: 60px 5% 30px 5%;
+         color: #666666;
+         i {
+             font-size: 2.125em;
+             margin-right: 20px;
+             color: #666666;
+         }
+         .sitelink {
+             font-weight: 300;
+             font-size: 0.875em;
+         }
+         &.tablet {
+             display: none;
+         }
+     }
+     .copyright {
+         color: #666666;
+         font-size: 0.75em;
+         font-weight: 300;
+         text-transform: uppercase;
+         background-color: #1e1e1e;
+         padding: 4%;
+         .tablet {
+             display: none;
+         }
+     }
+ }
+ 
+ @media only screen and (min-width:321px) {
+     .jumbotron {
+         background: url("../images/jumbotronbg-tablet.jpg") no-repeat center top;
+     }
+ }
+ 
+ @media only screen and (min-width:480px) {
+     footer {
+         .copyright {
+             padding: 3%;
+         }
+     }
+ }
+ 
+ @media only screen and (min-width: 768px) {
+     .jumbotron {
+         h1 {
+             font-size: 4.375em;
+         }
+         .mobile-info {
+             display: none;
+         }
+         .large-info {
+             display: block;
+             padding-left: 20%;
+             padding-right: 20%;
+             font-family: 'Helvetica', 'sans-serif';
+             font-weight: 400;
+             line-height: 1.25em;
+         }
+     }
+     .features {
+         @include container(100%);
+         .f-box {
+             @include span(4 of 12);
+             padding: 50px 15px;
+             &:first-child {
+                 img {
+                     width: 87px;
+                 }
+             }
+         }
+     }
+     .job-apply {
+         .job-position {
+             @include container(100%);
+             background-color: inherit;
+             padding: 0;
+             &.higlight {
+                 background-color: #222222;
+                 color: #ffffff;
+             }
+             .left {
+                 @include span(8 of 12);
+                 padding: 30px 5%;
+                 ul {
+                     li {
+                         padding: 5px 20px;
+                         margin-right: 7px;
+                         border: 1px solid #bbbbbb;
+                         font-size: 0.813em;
+                     }
+                 }
+             }
+             .right {
+                 position: relative;
+                 text-align: center;
+                 padding-left: 50px;
+                 min-height: 200px;
+                 display: block;
+                 @include span(4 of 12);
+             }
+         }
+         .load-more-jobs {
+             width: 25%;
+             color: #333333;
+         }
+     }
+ 
+     footer {
+         .contact-info {
+             @include container(100%);
+             .contact-box {
+                 @include span(4 of 12);
+                 padding-left: 10%;
+                 padding-bottom: 95px;
+                 h3 {
+                     margin-bottom: 25px;
+                 }
+             }
+         }
+         .f-social {
+             &.mobile {
+                 display: none;
+             }
+         }
+         .copyright {
+             @include container(100%);
+             padding: 2%;
+             p {
+                 line-height: 30px;
+                 @include span(8 of 12);
+                 &.tablet {
+                     display: block;
+                 }
+                 &.mobile {
+                     display: none;
+                 }
+             }
+             .f-social.tablet {
+                 @include span(4 of 12);
+                 display: block;
+                 padding: 0;
+                 text-align: right;
+                 .sitelink {
+                     text-transform: none;
+                     font-size: 1em;
+                 }
+             }
+         }
+     }
+ 
+     .apply {
+         display: block;
+         font-weight: 400;
+         color: #222222;
+         padding: 15px 42px;
+         border: 1px solid #222222;
+         @include centre('y');
+     }
+ }
+ 
+ @media only screen and (min-width: 1020px) {
+     .nav-social {
+         display: none;
+     }
+     .wrapper {
+         @include container(100%);
+         position: relative;
+         width: 80%;
+         margin: auto;
+         nav {
+             @include span(8 of 12);
+         }
+         .brand {
+             @include span(4 of 12);
+         }
+     }
+     header {
+         // position:absolute;
+         nav {
+             margin-top: 25px;
+             background-color: inherit;
+             text-align: right;
+             ul,
+             &.nav-collapse {
+                 li {
+                     padding-left: 30px;
+                     width:auto;
+                     // width: initial;
+                     display: inline-block;
+                     &:first-child {
+                         a {
+                             padding-top: 10px;
+                         }
+                     }
+                     &:last-child {
+                         a {
+                             padding-bottom: 10px;
+                         }
+                     }
+                     a {
+                         padding: 10px;
+                         color: #222222;
+                         font-size: 0.875em;
+                         font-weight: 400;
+                     }
+                 }
+             }
+         }
+     }
+     .jumbotron {
+         background: url('../images/jumbotronbg.jpg') no-repeat left center;
+         h1 {
+             padding-bottom: 40px;
+         }
+         hr {
+             display: block;
+         }
+         .large-info {
+             padding-left: 27%;
+             padding-right: 27%;
+         }
+     }
+     .features {
+         .f-box {
+             padding-top: 95px;
+         }
+     }
+ }
+ 
+ 
+ 
+ 
+ 
+ /* ==========================================================================
+    Helper classes
+    ========================================================================== */
+ 
+ .hidden {
+     display: none !important;
+     visibility: hidden;
+ }
+ 
+ .visuallyhidden {
+     border: 0;
+     clip: rect(0 0 0 0);
+     height: 1px;
+     margin: -1px;
+     overflow: hidden;
+     padding: 0;
+     position: absolute;
+     width: 1px;
+ }
+ 
+ .visuallyhidden.focusable:active,
+ .visuallyhidden.focusable:focus {
+     clip: auto;
+     height: auto;
+     margin: 0;
+     overflow: visible;
+     position: static;
+     width: auto;
+ }
+ 
+ .invisible {
+     visibility: hidden;
+ }
+ 
+ .clearfix:before,
+ .clearfix:after {
+     content: " ";
+     display: table;
+ }
+ 
+ .clearfix:after {
+     clear: both;
+ }
+ 
+ .clearfix {
+     *zoom: 1;
+ }
