@@ -20,8 +20,9 @@ module.exports = {
     server: {
       // should match `dest` in
       // path-config.json
-      baseDir: 'public'
-    }
+      baseDir: 'public',
+    },
+    host: '192.168.0.15'
   },
 
   stylesheets: {
