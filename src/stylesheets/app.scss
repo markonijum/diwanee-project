@@ -10,6 +10,7 @@
  @import "./vendor/animate";
  @import "font-awesome";
  @import "./vendor/responsiveNav";
+ @import "./vendor/parallax";
  
  
  /* ==========================================================================
@@ -39,6 +40,7 @@
  
  hr {
      display: none;
+     border:none;
  }
  
  body {
@@ -65,6 +67,16 @@
  }
  .wow {
      visibility: hidden;
+ }
+ .wrapper {
+     width:95%;
+     margin:0 auto;
+ }
+ .main-header {
+     .wrapper {
+         width:100%;
+         margin:0;
+     }
  }
  header {
      position: fixed;
@@ -173,6 +185,9 @@
          text-align: center;
          padding-top: 50px;
          padding-bottom: 120px;
+     }
+     .wrapper {
+         margin:0 auto;
      }
      h1 {
          padding-top: 100px;
@@ -329,9 +344,10 @@
  }
  
  .about-us {
-     padding-top: 90px;
-     background-color: #fbfbfb;
-     padding-bottom: 47px;
+    padding-top: 90px;
+    //  background-color: #fbfbfb;
+    //  padding-bottom: 47px;
+    padding-bottom:47px;
      h2 {
          font-weight: 500;
          font-size: 2.5em;
@@ -436,6 +452,9 @@
  }
  
  @media only screen and (min-width:480px) {
+     .wrapper {
+         width:85%;
+     }
      footer {
          .copyright {
              padding: 3%;
@@ -444,6 +463,60 @@
  }
  
  @media only screen and (min-width: 768px) {
+    .main-header {
+        .wrapper {
+            width:85%;
+            margin:0 auto;
+        }
+    }
+    .nav-social {
+        display: none;
+    }
+    .wrapper {
+        @include container(100%);
+        position: relative;
+        width: 80%;
+        margin: auto;
+        nav {
+            @include span(8 of 12);
+        }
+        .brand {
+            @include span(4 of 12);
+        }
+    }
+    header {
+        // position:absolute;
+        nav {
+            margin-top: 25px;
+            background-color: inherit;
+            text-align: right;
+            ul,
+            &.nav-collapse {
+                li {
+                    padding-left: 30px;
+                    width:auto;
+                    // width: initial;
+                    display: inline-block;
+                    &:first-child {
+                        a {
+                            padding-top: 10px;
+                        }
+                    }
+                    &:last-child {
+                        a {
+                            padding-bottom: 10px;
+                        }
+                    }
+                    a {
+                        padding: 10px;
+                        color: #222222;
+                        font-size: 0.875em;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
      .jumbotron {
          h1 {
              font-size: 4.375em;
@@ -459,6 +532,7 @@
              font-weight: 400;
              line-height: 1.25em;
          }
+
      }
      .features {
          @include container(100%);
@@ -562,54 +636,54 @@
  }
  
  @media only screen and (min-width: 1020px) {
-     .nav-social {
-         display: none;
-     }
-     .wrapper {
-         @include container(100%);
-         position: relative;
-         width: 80%;
-         margin: auto;
-         nav {
-             @include span(8 of 12);
-         }
-         .brand {
-             @include span(4 of 12);
-         }
-     }
-     header {
-         // position:absolute;
-         nav {
-             margin-top: 25px;
-             background-color: inherit;
-             text-align: right;
-             ul,
-             &.nav-collapse {
-                 li {
-                     padding-left: 30px;
-                     width:auto;
-                     // width: initial;
-                     display: inline-block;
-                     &:first-child {
-                         a {
-                             padding-top: 10px;
-                         }
-                     }
-                     &:last-child {
-                         a {
-                             padding-bottom: 10px;
-                         }
-                     }
-                     a {
-                         padding: 10px;
-                         color: #222222;
-                         font-size: 0.875em;
-                         font-weight: 400;
-                     }
-                 }
-             }
-         }
-     }
+    //  .nav-social {
+    //      display: none;
+    //  }
+    //  .wrapper {
+    //      @include container(100%);
+    //      position: relative;
+    //      width: 80%;
+    //      margin: auto;
+    //      nav {
+    //          @include span(8 of 12);
+    //      }
+    //      .brand {
+    //          @include span(4 of 12);
+    //      }
+    //  }
+    //  header {
+    //      // position:absolute;
+    //      nav {
+    //          margin-top: 25px;
+    //          background-color: inherit;
+    //          text-align: right;
+    //          ul,
+    //          &.nav-collapse {
+    //              li {
+    //                  padding-left: 30px;
+    //                  width:auto;
+    //                  // width: initial;
+    //                  display: inline-block;
+    //                  &:first-child {
+    //                      a {
+    //                          padding-top: 10px;
+    //                      }
+    //                  }
+    //                  &:last-child {
+    //                      a {
+    //                          padding-bottom: 10px;
+    //                      }
+    //                  }
+    //                  a {
+    //                      padding: 10px;
+    //                      color: #222222;
+    //                      font-size: 0.875em;
+    //                      font-weight: 400;
+    //                  }
+    //              }
+    //          }
+    //      }
+    //  }
      .jumbotron {
          background: url('../images/jumbotronbg.jpg') no-repeat left center;
          h1 {

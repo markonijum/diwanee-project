@@ -1,0 +1,33 @@
+.parallax { 
+    /* The image used */
+    position:relative;
+    background-image: url("../images/parallax-obb.jpg");
+
+    /* Set a specific height */
+    height: 800px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .wrapper {
+        @include centerer;
+        color:#ffffff;
+        hr {
+            height:2px;
+            background:#ffffff;
+        }
+        h3.sub-head {
+            color:#ffffff;
+        }
+    }
+}
+
+// .parallax-mirror {
+//     position:relative !important;
+// }
+// div.helper {
+//     height:1px;
+//     background:green;
+// }

@@ -5,6 +5,7 @@ import responsiveNav from 'responsive-nav';
 import SmoothScroll from 'smooth-scroll';
 import './plugins/wow';
 import './plugins/loadmore';
+import './plugins/parallax';
 
 (function($){
 
@@ -13,6 +14,7 @@ import './plugins/loadmore';
     //Animation of elements when scroling------------------------------------------------
     new WOW().init();
     //-----------------------------------------------------------------------------------
+
      
     //Adding shadow class to header element on certain point of scroll--------------------
     var mainHeader = $('.main-header');
